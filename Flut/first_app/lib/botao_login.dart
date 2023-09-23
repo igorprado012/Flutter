@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '';
+import 'dart:math';
 
 class BotaoLogin extends StatefulWidget {
   const BotaoLogin({super.key});
@@ -11,11 +11,11 @@ class BotaoLogin extends StatefulWidget {
 }
 
 class _BotaoLoginState extends State<BotaoLogin> {
-  var activeDiceImage = 'assets/images/logo.png';
-
+  final randomizer = Random();
+  var currentLoginBotao = 2;
   void login() {
     setState(() {
-      activeDiceImage = 'assets/images/icons.png';
+      currentLoginBotao = randomizer.nextInt(2) + 1;
     });
   }
 
@@ -25,7 +25,7 @@ class _BotaoLoginState extends State<BotaoLogin> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          activeDiceImage,
+          'assets/images/icons$currentLoginBotao.png',
           width: 200,
         ),
         const SizedBox(height: 150),
