@@ -1,3 +1,4 @@
+import 'package:first_app/esqueceu_senha.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -54,6 +55,20 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  void _showEsqueceuSuaSenhaDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: EsqueceuSuaSenha(
+            widget.color1,
+            widget.color2,
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                   TextField(
                     controller: _usernameController,
                     decoration: const InputDecoration(
-                      labelText: 'E-mail ou ID:',
+                      labelText: 'CPF:',
                       labelStyle: TextStyle(
                         fontSize: 20,
                         fontFamily: 'Quicksand',
@@ -140,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        // Adicione aqui a ação para "Esqueceu sua senha?"
+                        _showEsqueceuSuaSenhaDialog(context);
                       },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,

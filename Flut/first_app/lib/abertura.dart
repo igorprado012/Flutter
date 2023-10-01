@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:first_app/login.dart';
 import 'package:flutter/material.dart';
 
 const startAlignment = Alignment.topLeft;
@@ -15,6 +18,17 @@ class Abertura extends StatelessWidget {
 
   @override
   Widget build(context) {
+    Timer(
+      const Duration(seconds: 2),
+      () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => LoginUser(color1, color2),
+          ),
+        );
+      },
+    );
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
