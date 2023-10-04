@@ -51,7 +51,7 @@ class Enviado extends StatelessWidget {
                       width: 50,
                       height: 50,
                       child: Image.asset(
-                        'assets/images/aviao-f5Z.png',
+                        'assets/images/aviao.png',
                         width: 50,
                         height: 50,
                       ),
