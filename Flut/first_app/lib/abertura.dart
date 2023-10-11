@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:first_app/login.dart';
 import 'package:flutter/material.dart';
 
@@ -7,14 +6,7 @@ const startAlignment = Alignment.topLeft;
 const endAlingment = Alignment.bottomRight;
 
 class Abertura extends StatelessWidget {
-  const Abertura(this.color1, this.color2, {super.key});
-
-  const Abertura.fromRGBO({super.key})
-      : color1 = const Color.fromRGBO(74, 229, 229, 0.992),
-        color2 = const Color.fromRGBO(225, 239, 239, 0.593);
-
-  final Color color1;
-  final Color color2;
+  const Abertura({super.key});
 
   @override
   Widget build(context) {
@@ -24,15 +16,18 @@ class Abertura extends StatelessWidget {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginUser(color1, color2),
+            builder: (context) => const LoginUser(),
           ),
         );
       },
     );
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [color1, color2],
+          colors: [
+            Color.fromRGBO(74, 229, 229, 0.992),
+            Color.fromRGBO(225, 239, 239, 0.593)
+          ],
           begin: startAlignment,
           end: endAlingment,
         ),

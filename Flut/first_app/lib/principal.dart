@@ -1,13 +1,45 @@
+import 'package:first_app/menu.dart';
+import 'package:first_app/tela_de_sair.dart';
+// import 'package:first_app/tela_de_sair.dart';
 import 'package:flutter/material.dart';
 
 class Principal extends StatelessWidget {
-  const Principal(Color color, Color color2, {Key? key}) : super(key: key);
+  const Principal({super.key});
+
+  void _onMenuButtonPressed(BuildContext context) {
+    // Abra a tela do menu
+    Menu1Dialog.show(context);
+  }
+
+  void _onMinhasInformacoesButtonPressed(BuildContext context) {
+    // Coloque a ação desejada aqui
+  }
+
+  void _onFolhaDePagamentoButtonPressed(BuildContext context) {
+    // Coloque a ação desejada aqui
+  }
+
+  void _onBeneficiosButtonPressed(BuildContext context) {
+    // Coloque a ação desejada aqui
+  }
+
+  void _onRelatorioDeHorasButtonPressed(BuildContext context) {
+    // Coloque a ação desejada aqui
+  }
+
+  void _onAjudaButtonPressed(BuildContext context) {
+    // Coloque a ação desejada aqui
+  }
+
+  void _onSairButtonPressed(BuildContext context) {
+    // Coloque a ação desejada aqui
+    ConfirmSairDialog.show(context);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -56,7 +88,7 @@ class Principal extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.fromLTRB(0, 0.05, 0, 0),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () => _onMenuButtonPressed(context),
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),
@@ -164,7 +196,8 @@ class Principal extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 39),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            _onMinhasInformacoesButtonPressed(context),
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),
@@ -201,7 +234,8 @@ class Principal extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 39),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            _onFolhaDePagamentoButtonPressed(context),
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),
@@ -238,7 +272,8 @@ class Principal extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 39),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            _onRelatorioDeHorasButtonPressed(context),
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),
@@ -275,7 +310,7 @@ class Principal extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 39),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () => _onBeneficiosButtonPressed(context),
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),
@@ -315,7 +350,7 @@ class Principal extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 39),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => _onAjudaButtonPressed(context),
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
@@ -368,7 +403,7 @@ class Principal extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 39),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => _onSairButtonPressed(context),
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
